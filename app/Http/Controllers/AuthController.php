@@ -28,13 +28,13 @@ class AuthController extends Controller
 
         if($register){
             return response()->json([
-                'succes' => true,
+                'success' => true,
                 'message' => 'succes make account',
                 'data' => $register
             ],201);
         }else{
             return response()->json([
-                'succes' => false,
+                'success' => false,
                 'message' => 'fail make account',
                 'data' => null
             ],400);

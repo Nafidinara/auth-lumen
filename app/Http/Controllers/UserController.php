@@ -12,21 +12,21 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     public function show($id){
-        $user = User::find($id);
+        $user = User::select('id','name','email','password')->find($id);
         
         if($user){
             return response()->json([
-                'succes' => true,
+                'success' => true,
                 'message' => 'User Found',
                 'data' => $user
             ],200);
         }else{
             return response()->json([
-                'succes' => false,
+                'success' => false,
                 'message' => 'User Not Found',
                 'data' => ''
             ],404);
